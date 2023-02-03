@@ -1,4 +1,5 @@
 <div class="wrapper">
+
     <h1 class="city">{{myWeather?.cityName}}</h1>
     <h2 class="temperature">{{myWeather?.temp}}&deg;</h2>
     <h3 class="description">{{myWeather?.weatherKind}}</h3>
@@ -8,11 +9,11 @@
             <h4>Max: {{myWeather?.tempMax}}&deg;</h4>
             <h4>Min: {{myWeather?.tempMin}}&deg;</h4>
         </div>
-    </div>
-
+    </div> 
     
+    <form class="lookCity" (ngSubmit)=onSubmit(form) #form="ngForm">
+        <input type="text" class="cityName" name="city" ngModel #city="ngModel" placeholder="Name of a city">
+        <button class="btn" name="button">go</button>
+      </form>
     
-
-
-
 </div>

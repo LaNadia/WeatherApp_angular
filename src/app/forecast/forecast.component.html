@@ -1,1 +1,16 @@
-<p>forecast works!</p>
+<form [formGroup]="forecastForm" (ngSubmit)="onSumbit()" >
+    <input type="text" formControlName="forecastCity" placeholder="Name of the city...">
+    <button>go</button>
+</form>
+<div class="container">
+    <div class="day" *ngFor="let day of cityForcast">
+        <h2>{{day.date | date:'fullDate'}}</h2>
+        <div class="icon">
+            <img src="http://openweathermap.org/img/wn/{{day.icon}}@2x.png" alt="weather" style="height:50px; width:50px">
+        </div>
+        <div class="temp">
+            <h3>Max: {{day.tmpMax}}</h3>
+            <h3>Min: {{day.tempMin}}</h3>
+        </div>
+    </div>
+</div>
